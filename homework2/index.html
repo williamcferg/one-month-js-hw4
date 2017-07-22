@@ -1,0 +1,76 @@
+<html>
+  <title>Life Expectancy</title>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Average Expected Years'],
+          ['Monaco', 89.50],                                             
+          ['Singapore', 85.00],
+          ['Japan', 85.00],
+          ['Macau', 84.50],
+          ['San Marino', 83.30],
+          ['Iceland', 83.00],
+          ['Hong Kong', 82.90],
+          ['Andorra', 82.80],
+          ['Switzerland', 82.60],
+          ['Guernsey', 82.50],
+          ['Israel', 82.40],
+          ['South Korea', 82.40],
+          ['Luxembourg', 82.30],
+          ['Italy', 82.20],
+          ['Australia', 82.20],
+          ['Sweden', 82.10],
+          ['Liechtenstein', 81.90],
+          ['Canada', 81.90],
+          ['France', 81.80],
+          ['Norway', 81.80],                                      
+          ['Spain', 81.70],                                             
+          ['Austria', 81.50],                                                                                      
+          ['Netherlands', 81.30],                                             
+          ['Bermuda', 81.30],                                                                                      
+          ['New Zealand', 81.20],                                                                                      
+          ['Belgium', 81.00],                                             
+          ['Finland', 80.90],                                             
+          ['Ireland', 80.80],                                             
+          ['United Kingdom', 80.70],                                             
+          ['Germany', 80.70],                                             
+          ['Greece', 80.50],                                                                                       
+          ['Taiwan', 80.10],                                             
+          ['Virgin Islands', 80.00],                                             
+          ['United States', 79.80],                                                                                                               
+          ['Denmark', 79.40],                                             
+          ['Puerto Rico', 79.40],                                             
+          ['Portugal', 79.30],
+          ['China', 75.50],
+          ['India', 68.50],
+          ['Ukraine', 71.80],
+          ['Russia', 70.80],
+          ['Rwanda', 60.10],
+          ['Brazil', 73.80],
+          ['Kenya', 64.00],
+          ['Sierra Leone', 58.00],
+          ['South Africa', 63.10],
+          ['Greenland', 72.40]
+        ]);
+
+        var options = {
+          colorAxis: {colors: ['#b71c1c', '#ffcdd2']}
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <h2 style="font-family: helvetica; text-align: center; padding-top: 10px;">Life Expectancy Chart</h2>
+    <div id="regions_div" style="width: 1000px; height: 500px; margin-left: auto; margin-right: auto; padding-top: 20px;"></div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+  <title>Chicago Homicide Data 2016 & 2017</title>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Month', '2016', '2017'],
+          ['Jan', 57, 55],
+          ['Feb', 45, 50],
+          ['Mar', 49, 37],
+          ['Apr', 41, 41],
+          ['May', 68, 0],
+          ['Jun', 73, 0],
+          ['Jul', 70, 0],
+          ['Aug', 96, 0],
+          ['Sept', 69, 0],
+          ['Oct', 79, 0],
+          ['Nov', 80, 0],
+          ['Dec', 59, 0]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Homicides in Chicago',
+            subtitle: 'By Months for 2016 and 2017',
+          },
+          colors: ['#f44336', '#b71c1c'],
+          bars: 'horizontal' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="barchart_material" style="width: 900px; height: 500px; padding: 50px;"></div>
+  </body>
+</html>
